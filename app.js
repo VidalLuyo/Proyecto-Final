@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const path = require('path');
 const app = express();
 
-const ip = 'localhost';
+const ip = '34.199.237.223';
 const port = 3000;
 
 // Configuración de la conexión a la base de datos (para ambas bases)

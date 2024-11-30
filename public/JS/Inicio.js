@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const iconGrid = document.getElementById('iconGrid');
-    const showMoreBtn = document.getElementById('showMoreBtn');
-    const showLessBtn = document.getElementById('showLessBtn');
+    const showMoreBtn = document.getElementById('showMoreBtnCustom');
+    const showLessBtn = document.getElementById('showLessBtnCustom');
 
     // Iconos con enlaces
     const icons = [
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         showLessBtn.style.display = 'none';
     });
 });
+
 
 let visibleIcons = [];
 let hiddenIcons = [...icons];

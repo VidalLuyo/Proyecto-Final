@@ -95,25 +95,26 @@
     <script src="/public/JS/ruleta.js"></script>
 
     <!-- Section 02 -->
-    <section class="section-02">
-        <div class="container">
+    <section class="section-02-custom">
+        <div class="container-custom">
             <div class="titulo text-center mb-4">
                 <img src="/public/IMG/image.png" alt="SDG Title" class="img-fluid">
             </div>
             <div class="row">
-                <div class="grid" id="iconGrid">
+                <div class="grid-custom" id="iconGrid">
                     <!-- Los iconos se insertarán aquí dinámicamente -->
                 </div>
                 <div id="iconGridMore" class="d-none">
                     <!-- Iconos adicionales que se mostrarán con "Mostrar más" -->
                 </div>
                 <div class="col-12">
-                    <button id="showMoreBtn" class="btn-fut">Mostrar más</button>
-                    <button id="showLessBtn" class="btn-fut" style="display: none;">Mostrar menos</button>
+                    <button id="showMoreBtnCustom" class="btn-fut-custom">Mostrar más</button>
+                    <button id="showLessBtnCustom" class="btn-fut-custom" style="display: none;">Mostrar menos</button>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <div class="seccion-actividad">
@@ -458,7 +459,7 @@
                 });
         });
     </script>
-    
+
     <script>
         // Función para cargar las noticias en el carrusel
         function Noticias() {
@@ -507,47 +508,47 @@
 
 
     </script>
-<script>
-    // Activar el deslizar (swipe) para el carrusel de noticias
-    const carrusel = document.getElementById('noticiasCarrusel');
-    const carouselInstance = new bootstrap.Carousel(carrusel, {
-        touch: true, // Habilita el deslizamiento táctil en dispositivos móviles
-        ride: 'carousel', // La opción de empezar el carrusel automáticamente
-        interval: 5000, // Intervalo de 5 segundos para cambiar los items
-    });
+    <script>
+        // Activar el deslizar (swipe) para el carrusel de noticias
+        const carrusel = document.getElementById('noticiasCarrusel');
+        const carouselInstance = new bootstrap.Carousel(carrusel, {
+            touch: true, // Habilita el deslizamiento táctil en dispositivos móviles
+            ride: 'carousel', // La opción de empezar el carrusel automáticamente
+            interval: 5000, // Intervalo de 5 segundos para cambiar los items
+        });
 
-    // Agregar soporte para arrastrar el carrusel en dispositivos de escritorio
-    let isMouseDown = false;
-    let startX;
-    let scrollLeft;
+        // Agregar soporte para arrastrar el carrusel en dispositivos de escritorio
+        let isMouseDown = false;
+        let startX;
+        let scrollLeft;
 
-    carrusel.addEventListener('mousedown', (e) => {
-        isMouseDown = true;
-        startX = e.pageX - carrusel.offsetLeft;
-        scrollLeft = carrusel.scrollLeft;
-    });
+        carrusel.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            startX = e.pageX - carrusel.offsetLeft;
+            scrollLeft = carrusel.scrollLeft;
+        });
 
-    carrusel.addEventListener('mouseleave', () => {
-        isMouseDown = false;
-    });
+        carrusel.addEventListener('mouseleave', () => {
+            isMouseDown = false;
+        });
 
-    carrusel.addEventListener('mouseup', () => {
-        isMouseDown = false;
-    });
+        carrusel.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
 
-    carrusel.addEventListener('mousemove', (e) => {
-        if (!isMouseDown) return;
-        e.preventDefault();
-        const x = e.pageX - carrusel.offsetLeft;
-        const walk = (x - startX) * 1; // Ajusta la velocidad de desplazamiento
-        carrusel.scrollLeft = scrollLeft - walk;
-    });
+        carrusel.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            e.preventDefault();
+            const x = e.pageX - carrusel.offsetLeft;
+            const walk = (x - startX) * 1; // Ajusta la velocidad de desplazamiento
+            carrusel.scrollLeft = scrollLeft - walk;
+        });
 
-    // Cambiar automáticamente el carrusel cada 5 segundos
-    setInterval(() => {
-        carouselInstance.next(); // Cambia al siguiente item del carrusel
-    }, 5000); // 5000 ms = 5 segundos
-</script>
+        // Cambiar automáticamente el carrusel cada 5 segundos
+        setInterval(() => {
+            carouselInstance.next(); // Cambia al siguiente item del carrusel
+        }, 5000); // 5000 ms = 5 segundos
+    </script>
 
 
 </body>
